@@ -1,9 +1,15 @@
-export function ToFormData<T>(args: T): FormData{
+export function ToFormData<T>(args: T, includeNullValues: boolean = false, includeUndefinedValues = false): FormData{
     const f = new FormData();
     let key: keyof T;
     for (key in args) {
         if (Object.prototype.hasOwnProperty.call(args, key)) {
             const value = args[key];
+
+            if(value === null && !includeNullValues)
+                continue;
+            if(value === undefined && !includeUndefinedValues)
+                continue;
+            
             //if value is blob or string, it can be directly inserted into formdata
             if(value instanceof Blob || typeof(value) === 'string'){
                 f.append(key, value);
