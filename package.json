@@ -1,12 +1,12 @@
 {
   "name": "@aloysius-software-factory/form-data-helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && copy package.json dist && copy README.md dist", 
+    "build": "tsc && copy package.json dist && copy README.md dist",
     "publish-npm": "npm run build && cd dist && npm publish"
   },
   "repository": {
@@ -25,6 +25,6 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-obfuscator": "^3.5.1"
-  }, 
+  },
   "readme": "README.md"
 }
